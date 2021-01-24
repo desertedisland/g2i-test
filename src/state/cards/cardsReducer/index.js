@@ -1,4 +1,4 @@
-import { CARD_ACTIONS } from './cardsActions';
+import { CARD_ACTIONS } from '../cardsActions';
 
 const initState = {
   cards: [],
@@ -18,13 +18,13 @@ export default function cardsReducer(state = initState, action) {
 
     case CARD_ACTIONS.WORKING:
       return { ...state, working: action.working };
-            
+
     case CARD_ACTIONS.COMMS_ERROR:
       return { ...state, commsError: action.error };
 
     default:
       return state;
-  
+
   }
 
 }

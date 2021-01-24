@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 
 import {
   getCardsRequest,
-} from './cardsActions';
+} from './index';
 
 // Mock the redux store
 const middlewares = [thunk];
