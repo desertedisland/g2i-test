@@ -47,6 +47,8 @@ export default function Quiz() {
 
     } else {
 
+      // go to the results page if all questions have been answered.
+      // eslint-disable-next-line no-unused-expressions
       history && history.push('/results');
 
     }
