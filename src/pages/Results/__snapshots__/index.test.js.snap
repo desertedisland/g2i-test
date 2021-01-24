@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results page Snapshot test: 1`] = `
+<div
+  className="sc-gsTCUz fFRaSL"
+>
+  <h1
+    className="sc-bdfBwQ CDlxa"
+    data-test-id="quiz-results-heading"
+  >
+    You scored 
+    1
+     / 
+    2
+  </h1>
+  <ul
+    className="sc-jSgupP edqJPr"
+    data-test-id="quiz-answers-display"
+  >
+    <li
+      className="correct"
+    >
+      What is the meaning of life?
+    </li>
+    <li
+      className="incorrect"
+    >
+      Who is Ford Prefect?
+    </li>
+  </ul>
+</div>
+`;
