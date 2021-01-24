@@ -1,3 +1,5 @@
+/* eslint react/jsx-one-expression-per-line: 0 */
+
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -38,17 +40,11 @@ export default function Results() {
   return (
     <AlignedPage>
 
-      <HeaderH1>
-        You scored
-        {' '}
-        {score.correctAnswers.length}
-        {' '}
-        /
-        {' '}
-        { score.correctAnswers.length + score.incorrectAnswers.length }
+      <HeaderH1 data-test-id="quiz-results-heading">
+        You scored {score.correctAnswers.length} / { score.correctAnswers.length + score.incorrectAnswers.length }
       </HeaderH1>
 
-      <AnswerDisplay>
+      <AnswerDisplay data-test-id="quiz-answers-display">
 
         {
           results.map(
