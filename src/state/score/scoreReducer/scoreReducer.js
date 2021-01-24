@@ -1,4 +1,4 @@
-import { SCORE_ACTIONS } from '../scoreActions/scoreActions';
+import { SCORE_ACTIONS } from '../scoreActions';
 
 const initState = {
   correctAnswers: [],

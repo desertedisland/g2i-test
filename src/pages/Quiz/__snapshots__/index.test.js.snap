@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz page Snapshot test: 1`] = `
+<div
+  className="sc-gsTCUz fFRaSL"
+>
+  <h1
+    className="sc-bdfBwQ CDlxa"
+    data-test-id="quiz-heading"
+  >
+    Hitchhikers guide to the galaxy
+  </h1>
+  <p
+    className="sc-jSgupP DzdUn quiz-question"
+  >
+    what is the meaning of life?
+  </p>
+  <div
+    className="sc-gKsewC jmlHni"
+  >
+    <button
+      className="sc-hKgILt ePuoyr"
+      data-test-id="submit-answer-true"
+      onClick={[Function]}
+    >
+      true
+    </button>
+    <button
+      className="sc-hKgILt ePuoyr"
+      data-test-id="submit-answer-false"
+      onClick={[Function]}
+    >
+      false
+    </button>
+  </div>
+</div>
+`;
