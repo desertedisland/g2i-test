@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }  
 
   body{
+    
     font-family: Quicksand, sans-serif;
     
     background: ${styleVariables.backgroundDefault};
@@ -18,6 +19,12 @@ const GlobalStyle = createGlobalStyle`
     .main{  
       width: 60%;
       margin: auto;
+    
+      @media (max-width: ${styleVariables.breakMobile}px) {
+        width: 90%;      
+      }
+      
+      
     }
     
   }
