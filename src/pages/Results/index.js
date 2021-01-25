@@ -27,16 +27,24 @@ export default function Results() {
   );
 
   // Create a unique key for each card by taking the first 10 characters of the
-  // question, removing whitespace and transforming it to lowercase.
-  const getKey = (question) => question.split('').slice(0, 10).join('')
+  // question + answer, removing whitespace, transforming to lowercase and appending the results.
+  const getKey = (question, answer) => `${question.split('').slice(0, 10).join('')
     .replace(/\s/g, '')
-    .toLowerCase();
+    .toLowerCase()}
+    -
+    ${answer.split('').slice(0, 10).join('')
+    .replace(/\s/g, '')
+    .toLowerCase()}`;
 
-  // Combine both correct and incorrect answers so that they can be displayed with the result
-  // and correct answer.
+  // Combine both correct and incorrect answers into on array so that they can be displayed with the result
+  // and correct answer. getKey() supplies a unique key to each item.
   const results = [
-    ...score.correctAnswers.map((answer) => ({ ...answer, iscorrect: true, key: getKey(answer.question) })),
-    ...score.incorrectAnswers.map((answer) => ({ ...answer, iscorrect: false, key: getKey(answer.question) })),
+    ...score.correctAnswers.map(
+      (answer) => ({ ...answer, iscorrect: true, key: getKey(answer.question, answer.correct_answer) }),
+    ),
+    ...score.incorrectAnswers.map(
+      (answer) => ({ ...answer, iscorrect: false, key: getKey(answer.question, answer.correct_answer) }),
+    ),
   ];
 
   return (
