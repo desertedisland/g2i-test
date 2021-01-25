@@ -11,7 +11,7 @@ exports[`Quiz page Snapshot test: 1`] = `
     Hitchhikers guide to the galaxy
   </h1>
   <p
-    className="sc-jSgupP DzdUn quiz-question"
+    className="sc-jSgupP fFmlEA quiz-question"
   >
     what is the meaning of life?
   </p>

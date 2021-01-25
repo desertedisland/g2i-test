@@ -73,8 +73,8 @@ export default function Quiz() {
       </QuizQuestion>
 
       <ButtonContainer>
-        <StyledButton data-test-id="submit-answer-true" onClick={(ev) => submitAnswer('True')}>true</StyledButton>
-        <StyledButton data-test-id="submit-answer-false" onClick={(ev) => submitAnswer('False')}>false</StyledButton>
+        <StyledButton data-test-id="submit-answer-true" onClick={() => submitAnswer('True')}>true</StyledButton>
+        <StyledButton data-test-id="submit-answer-false" onClick={() => submitAnswer('False')}>false</StyledButton>
       </ButtonContainer>
 
     </AlignedPage>
