@@ -6,6 +6,8 @@ import { addCorrectAnswer, addIncorrectAnswer } from '../../state/score/scoreAct
 import { AlignedPage, HeaderH1, StyledButton } from '../../styles/components';
 import { QuizQuestion, ButtonContainer } from './styles';
 
+import { htmlDecode } from '../../lib/misc'; // Decode HTML entities
+
 export default function Quiz() {
 
   const cards = useSelector((state) => state.cards.cards);
@@ -67,7 +69,7 @@ export default function Quiz() {
       <HeaderH1 data-test-id="quiz-heading">{currentCard.category}</HeaderH1>
 
       <QuizQuestion className="quiz-question">
-        {currentCard.question}
+        { htmlDecode(currentCard.question) }
       </QuizQuestion>
 
       <ButtonContainer>

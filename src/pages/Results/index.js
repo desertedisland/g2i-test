@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { HeaderH1, AlignedPage } from '../../styles/components';
 import { AnswerDisplay } from './styles';
 
+import { htmlDecode } from '../../lib/misc'; // Decode HTML entities
+
 export default function Results() {
 
   const history = useHistory();
@@ -49,7 +51,9 @@ export default function Results() {
         {
           results.map(
             (answer) => (
-              <li key={answer.key} className={answer.iscorrect ? 'correct' : 'incorrect'}>{answer.question}</li>
+              <li key={answer.key} className={answer.iscorrect ? 'correct' : 'incorrect'}>
+                { htmlDecode(answer.question) }
+              </li>
             ),
           )
         }
