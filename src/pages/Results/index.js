@@ -8,6 +8,16 @@ import { AnswerDisplay } from './styles';
 
 import { htmlDecode } from '../../lib/misc'; // Decode HTML entities
 
+// Create a unique key for each card by taking the first 10 characters of the
+// question + answer, removing whitespace, transforming to lowercase and appending the results.
+const getKey = (question, answer) => `${question.split('').slice(0, 10).join('')
+  .replace(/\s/g, '')
+  .toLowerCase()}
+    -
+    ${answer.split('').slice(0, 10).join('')
+    .replace(/\s/g, '')
+    .toLowerCase()}`;
+
 export default function Results() {
 
   const history = useHistory();
@@ -23,18 +33,10 @@ export default function Results() {
 
       }
 
+      return null;
+    
     }, [],
   );
-
-  // Create a unique key for each card by taking the first 10 characters of the
-  // question + answer, removing whitespace, transforming to lowercase and appending the results.
-  const getKey = (question, answer) => `${question.split('').slice(0, 10).join('')
-    .replace(/\s/g, '')
-    .toLowerCase()}
-    -
-    ${answer.split('').slice(0, 10).join('')
-    .replace(/\s/g, '')
-    .toLowerCase()}`;
 
   // Combine both correct and incorrect answers into on array so that they can be displayed with the result
   // and correct answer. getKey() supplies a unique key to each item.

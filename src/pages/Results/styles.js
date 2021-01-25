@@ -4,6 +4,8 @@ import variables from '../../styles/variables';
 export const AnswerDisplay = styled.ul`
       
     list-style-type: none;
+    padding: 0;
+    margin: ${variables.marginDefault}px 0;
     
     li{
       margin: 0;

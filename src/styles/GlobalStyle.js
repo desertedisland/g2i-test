@@ -18,22 +18,16 @@ const GlobalStyle = createGlobalStyle`
     
     .main{  
       width: 60%;
-      margin: auto;
+      margin: ${styleVariables.marginDefault}px auto;
     
       @media (max-width: ${styleVariables.breakMobile}px) {
         width: 90%;      
-      }
-      
+      }      
       
     }
     
   }
-  
-  // Miscellaneous styles
-  .float-right{
-    float: right;
-  }
-  
+    
 `;
 
 export default GlobalStyle;
