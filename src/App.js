@@ -6,6 +6,7 @@ import GlobalStyle from './styles/GlobalStyle';
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Results from './pages/Results';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   [
@@ -17,6 +18,7 @@ const App = () => (
         <Route path="/" exact component={Home} />
         <Route path="/quiz" component={Quiz} />
         <Route path="/results" component={Results} />
+        <Route component={NotFound} />
 
       </Switch>
 
