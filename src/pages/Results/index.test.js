@@ -1,6 +1,7 @@
 /* eslint no-undef: 0 */
 
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -38,7 +39,14 @@ describe('Results page',
       () => {
 
         store.dispatch = jest.fn();
-        testRenderer = renderer.create(<Provider store={store}><Results /></Provider>);
+
+        testRenderer = renderer.create(
+          <Provider store={store}>
+            <BrowserRouter>
+              <Results />
+            </BrowserRouter>
+          </Provider>,
+        );
 
       },
     );

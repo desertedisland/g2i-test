@@ -14,7 +14,7 @@ exports[`Results page Snapshot test: 1`] = `
     2
   </h1>
   <ul
-    className="sc-jSgupP edqJPr"
+    className="sc-jSgupP dHLJMx"
     data-test-id="quiz-answers-display"
   >
     <li
@@ -28,5 +28,12 @@ exports[`Results page Snapshot test: 1`] = `
       Who is Ford Prefect?
     </li>
   </ul>
+  <a
+    className="sc-eCssSg ckKovT"
+    href="/"
+    onClick={[Function]}
+  >
+    Play again?
+  </a>
 </div>
 `;
