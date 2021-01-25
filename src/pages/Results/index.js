@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { HeaderH1, AlignedPage } from '../../styles/components';
+import { HeaderH1, AlignedPage, StyledLink } from '../../styles/components';
 import { AnswerDisplay } from './styles';
 
 import { htmlDecode } from '../../lib/misc'; // Decode HTML entities
@@ -59,6 +59,8 @@ export default function Results() {
         }
 
       </AnswerDisplay>
+
+      <StyledLink to="/">Play again?</StyledLink>
 
     </AlignedPage>
   );
