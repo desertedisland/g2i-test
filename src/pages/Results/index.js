@@ -2,14 +2,18 @@
 
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { resetCards } from '../../state/cards/cardsActions';
+import { resetAnswers } from '../../state/score/scoreActions';
+
 import { HeaderH1, AlignedPage, StyledLink } from '../../styles/components';
 import { AnswerDisplay } from './styles';
 
 import { htmlDecode } from '../../lib/misc'; // Decode HTML entities
 
 // Create a unique key for each card by taking the first 10 characters of the
-// question + answer, removing whitespace, transforming to lowercase and appending the results.
+// question + answer, removing whitespace, transforming to lowercase and concatenating the results.
 const getKey = (question, answer) => `${question.split('').slice(0, 10).join('')
   .replace(/\s/g, '')
   .toLowerCase()}
@@ -21,6 +25,7 @@ const getKey = (question, answer) => `${question.split('').slice(0, 10).join('')
 export default function Results() {
 
   const history = useHistory();
+  const dispatch = useDispatch();
   const score = useSelector((state) => state.score);
 
   useEffect(
@@ -33,7 +38,13 @@ export default function Results() {
 
       }
 
-      return null;
+      // Reset the quiz on leaving this page.
+      return () => {
+
+        dispatch(resetCards());
+        dispatch(resetAnswers());
+
+      };
 
     }, [],
   );
