@@ -6,6 +6,7 @@ import {
 export default function NotFound() {
 
   return (
+
     <AlignedPage>
 
       <HeaderH1>Page Not Found</HeaderH1>

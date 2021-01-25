@@ -2,10 +2,11 @@
   "name": "g2i-test",
   "version": "1.0.0",
   "description": "Code challenge for g2i.co by James Drummond",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "parcel -p 8080 watch index.html",
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build index.html --public-url ./"
   },
   "repository": {
     "type": "git",
